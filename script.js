@@ -6,8 +6,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const finalMessage = document.getElementById("finalMessage");
     const message = document.querySelector(".message");
     const bouquet = document.querySelector(".bouquet");
+    const bgMusic = document.getElementById("bgMusic"); // Access the audio element
 
     forgiveBtn.addEventListener("click", function () {
+        // Start background music after interaction
+        bgMusic.play();
+
         // Hide "I'm sorry..." text
         message.style.opacity = "0";
 
