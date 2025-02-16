@@ -1,0 +1,181 @@
+body {
+    background: linear-gradient(to bottom, #222, #444);
+    text-align: center;
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Message */
+.message {
+    font-size: 3em;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
+    z-index: 10;
+}
+
+/* Bouquet */
+.bouquet {
+    position: relative;
+    width: 60vmin;
+    height: 90vmin;
+    animation: sway 3s infinite alternate ease-in-out;
+}
+
+/* Flowers */
+.flower {
+    width: 20vmin;
+    height: 20vmin;
+    background: pink;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.flower1 { top: 0; left: 50%; transform: translateX(-50%); background: #ff85a2; }
+.flower2 { top: 10vmin; left: 10%; background: #ffaad4; }
+.flower3 { top: 10vmin; left: 70%; background: #ff85a2; }
+.flower4 { top: 20vmin; left: 30%; background: #ffaad4; }
+.flower5 { top: 20vmin; left: 50%; background: #ff85a2; }
+
+/* Stem */
+.stem {
+    width: 8vmin;
+    height: 50vmin;
+    background: #0d630d;
+    position: absolute;
+    left: 50%;
+    top: 30vmin;
+    transform: translateX(-50%);
+    border-radius: 5vmin;
+}
+
+/* Ribbon */
+.ribbon {
+    width: 30vmin;
+    height: 8vmin;
+    background: red;
+    border-radius: 10vmin;
+    position: absolute;
+    left: 50%;
+    top: 65vmin;
+    transform: translateX(-50%);
+}
+
+/* Button */
+#forgiveBtn {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 2em;
+    border: none;
+    background: red;
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#forgiveBtn:hover {
+    background: darkred;
+}
+
+/* Transition Screen */
+#transitionScreen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: black;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 2s;
+}
+
+/* Lips Animation */
+#kissAnimation {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s;
+}
+
+.lips {
+    width: 100vmin;
+    animation: kissZoom 1s ease-in-out;
+}
+
+@keyframes kissZoom {
+    0% { transform: scale(0); }
+    100% { transform: scale(1.2); }
+}
+
+/* Final Love Message */
+/* Final Love Message */
+#finalMessage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 2em;
+    display: none;
+    z-index: 10;
+}
+
+#finalMessage h2 {
+    margin-bottom: 10px;
+}
+
+#finalMessage img {
+    width: 400px; /* Smaller square */
+    height: 400px;
+    border-radius: 10px;
+    object-fit: cover; /* Ensures the image is nicely cropped */
+    margin-top: 10px;
+}
+
+/* Hide bouquet and forgive button during final animation */
+#finalMessage ~ .bouquet, #finalMessage ~ #forgiveBtn {
+    visibility: hidden;
+}
+
+
+
+/* Responsive */
+@media (max-width: 600px) {
+    .bouquet {
+        width: 90vmin;
+        height: 100vmin;
+    }
+
+    .flower {
+        width: 25vmin;
+        height: 25vmin;
+    }
+
+    .message {
+        font-size: 2.5em;
+    }
+
+    #forgiveBtn {
+        font-size: 1.5em;
+    }
+
+    #finalMessage {
+        font-size: 1.5em;
+    }
+
+    #finalMessage img {
+        width: 90vmin;
+    }
+}
